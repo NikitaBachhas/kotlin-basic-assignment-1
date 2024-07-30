@@ -23,4 +23,18 @@ class ConversionOfNumbersToColumnSequenceLabels {
             }
         }
     }
+
+    fun numberToColumnLabel (currentNumber: Int): String{
+        val columnLabel = StringBuilder()
+        var num = currentNumber
+
+        while (num > 0) {
+            num--
+            val remainder = num % 26
+            columnLabel.insert(0, ('A' + remainder))
+            num /= 26
+        }
+
+        return columnLabel.toString()
+    }
 }

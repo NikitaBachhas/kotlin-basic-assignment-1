@@ -51,4 +51,9 @@ class ConversionOfNumbersToColumnSequenceLabelsTest {
             }
         )
     }
+    @Test
+    fun `should return correct column label based on the number entered`() {
+        val numbersToColumnSequenceLabels = ConversionOfNumbersToColumnSequenceLabels()
+        assertEquals("AA", numbersToColumnSequenceLabels.numberToColumnLabel(27))
+    }
 }
