@@ -41,4 +41,14 @@ class ConversionOfNumbersToColumnSequenceLabelsTest {
             }
         )
     }
+    @Test
+    fun `should throw error if sequence of numbers is beyond that assigned to ZZZ`() {
+        val numbersToColumnSequenceLabels = ConversionOfNumbersToColumnSequenceLabels()
+        assertFailsWith<IllegalArgumentException>(
+            message = "Sequence of numbers exceeds max value assigned to column label for ZZZ",
+            block = {
+                numbersToColumnSequenceLabels.validationOfNumbers(17577, 1)
+            }
+        )
+    }
 }
