@@ -56,4 +56,10 @@ class ConversionOfNumbersToColumnSequenceLabelsTest {
         val numbersToColumnSequenceLabels = ConversionOfNumbersToColumnSequenceLabels()
         assertEquals("AA", numbersToColumnSequenceLabels.numberToColumnLabel(27))
     }
+    @Test
+    fun `should return a list of string column label based on the starting sequence number and number of results entered`() {
+        val numbersToColumnSequenceLabels = ConversionOfNumbersToColumnSequenceLabels()
+        assertEquals("AA, AB, AC, AD, AE, AF, AG, AH, AI, AJ",
+            numbersToColumnSequenceLabels.generatingColumnLabels(27, 10))
+    }
 }

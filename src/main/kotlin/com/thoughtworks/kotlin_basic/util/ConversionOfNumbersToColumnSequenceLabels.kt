@@ -37,4 +37,17 @@ class ConversionOfNumbersToColumnSequenceLabels {
 
         return columnLabel.toString()
     }
+
+    fun generatingColumnLabels (start: Int, noOfResults: Int): String{
+        var newString = arrayOf<String>()
+
+        if (validationOfNumbers (start, noOfResults)){
+            for (i in start..<start+noOfResults) {
+                val columnLabel = numberToColumnLabel(i)
+                newString += columnLabel
+            }
+        }
+
+        return(newString.joinToString())
+    }
 }
